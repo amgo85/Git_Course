@@ -1,0 +1,13 @@
+
+git clone project-name
+git clone https://github.com/amgo85/Git_Course.git
+
+git status 
+to know the files that are not synced with repo
+
+git add .
+all files got added to the stage
+
+git reset head file-name
+if u want to unstage some file after they've been added
+
