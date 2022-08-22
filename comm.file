@@ -9,6 +9,8 @@ git add .
 all files got added to the stage
 
 git reset head file-name
+or 
+git restore --staged filename
 if u want to unstage some file after they've been added
 
 git commit -m "Created main project structure"
@@ -21,3 +23,50 @@ will tell u which branch are u in
 git remote -v
 
 git push RemoteRepoName branchName 
+
+git pull origin
+fetch data & merge
+
+git config -l  or  git config --list
+diff.astextplain.textconv=astextplain
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+http.sslbackend=openssl
+http.sslcainfo=C:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
+core.autocrlf=true
+core.fscache=true
+core.symlinks=false
+core.editor=nano.exe
+pull.rebase=false
+credential.helper=manager
+user.email=amgo85@gmail.com
+user.name=Ahmad
+init.defaultbranch=main
+core.repositoryformatversion=0
+core.filemode=false
+core.bare=false
+core.logallrefupdates=true
+core.symlinks=false
+core.ignorecase=true
+remote.origin.url=https://github.com/amgo85/Our-Project.git
+remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+branch.main.remote=origin
+branch.main.merge=refs/heads/main
+
+git config --global
+to change the global configuration 
+git config --global user.email
+
+git config -l --show-origin
+git config --global --unset user.name
+will remove the setting for user.name
+
+git config --global --edit
+
+will allow to change setting using editor
+
+
+
+
