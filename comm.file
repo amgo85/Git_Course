@@ -1,30 +1,30 @@
 
-git clone project-name
-git clone https://github.com/amgo85/Git_Course.git
+>git clone project-name
+>git clone https://github.com/amgo85/Git_Course.git
 
-git status 
+>git status 
 to know the files that are not synced with repo
 
-git add .
+>git add .
 all files got added to the stage
 
-git reset head file-name
+>git reset head file-name
 or 
-git restore --staged filename
+>git restore --staged filename
 if u want to unstage some file after they've been added
 
-git commit -m "Created main project structure"
+>git commit -m "Created main project structure"
 you are preparing to push to remote repo
 but we are still in the local repo
 
-git branch
+>git branch
 will tell u which branch are u in
 
-git remote -v
+>git remote -v
 
-git push RemoteRepoName branchName 
+>git push RemoteRepoName branchName 
 
-git pull origin
+>git pull origin
 fetch data & merge
 
 git config -l  or  git config --list
@@ -55,18 +55,141 @@ remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
 branch.main.remote=origin
 branch.main.merge=refs/heads/main
 
-git config --global
+>git config --global
 to change the global configuration 
-git config --global user.email
+>git config --global user.email
 
-git config -l --show-origin
-git config --global --unset user.name
+>git config -l --show-origin
+>git config --global --unset user.name
 will remove the setting for user.name
 
-git config --global --edit
+>git config --global --edit
 
-will allow to change setting using editor
+will allow to change setting using editor, inside editor you can type the below setting
+
+[user]
+        email = amgo85@gmail.com
+        name = Ahmad
+[init]
+        defaultBranch = main
+
+[color "status"]
+        added = yellow
+        changed = red bold
+        untracked = magenta bold
+
+[color "branch"]
+        remote = yellow
 
 
+[Arabic] Learn Git & GitHub #08 - Generate And Test Github Public Key
+
+>ssh-keygen -t rsa -b 4096 -C "ahdmirghany@gmail.com"
+Generating public/private rsa key pair.
+Enter file in which to save the key (C:\Users\HP/.ssh/id_rsa):
+Created directory 'C:\Users\HP/.ssh'.
+Enter passphrase (empty for no passphrase):524359059
+Enter same passphrase again:524359059
+Your identification has been saved in C:\Users\HP/.ssh/id_rsa.
+Your public key has been saved in C:\Users\HP/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:iEPe0LmPmpfzKSpCHXdHkYwOeGpb2vFR67B0aT6g7Xc ahdmirghany@gmail.com
+The key's randomart image is:
++---[RSA 4096]----+
+|    .   o.o      |
+|   . + o =       |
+|    = = o o      |
+|   * B X *       |
+|  o @ @ S        |
+| . + + * +       |
+|.     o.. .      |
+|. .  o=. o E     |
+| . .+o ++ .      |
++----[SHA256]-----+
+
+>ssh -T git@github.com
+
+go where you want to 
+>mkdir repos
+>cd repos
+\repos>git init
+Initialized empty Git repository in C:/Users/HP/Documents/repos/.git/
+
+
+>git config --global alias.st status
+to set up an alias for status command
+to view the aliased command type
+>$ git config --global alias.st
+
+>$ git config --global alias.br branch
+>git config --global alias.cm "commit -m"
+
+>git config --global --edit
+                                          
+[user]
+        email = amgo85@gmail.com
+        name = Ahmad
+[init]
+        defaultBranch = main
+
+[color "status"]
+        added = yellow
+        changed = red bold
+        untracked = magenta bold
+
+[color "branch"]
+        remote = yellow
+
+[alias]
+        st = status
+        br = branch
+        cm = commit -m
+
+
+
+
+>git branch
+* main
+
+>git branch scroll
+>git checkout scroll	to switch to that new branch
+
+to delete the branch
+>git branch -d scroll
+>git checkout -b Dev-Feature	will create a branch and switch to it
+>git branch -m Development 	will rename the branch you are in
+create any file let say contact.html 
+now you are in the Development branch
+
+>git add contact.html
+>git commit -m "creating contact.html & testing branch"
+
+Now you have two options either pushing the changes as current branch & making pull request in Github 
+Or merging changes with main branch using the following command after switching to main branch
+>git branch main
+>git merge Development
+
+>git branch -m Development 	will delete the branch
+
+git checkout -b scroll
+Switched to a new branch 'scroll'
+
+>git status
+On branch scroll
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        about-us.html
+
+
+>git commit -m "new experiment"
+[scroll f1ebb57] new experiment
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 about-us.html
+
+
+>git branch -D scroll		with -D flag, it will delete the branch even though there is a commit not pushed
+Deleted branch scroll (was f1ebb57).
+
+& if you check now, the file about-us.html which was under scroll branch also got deleted
 
 
